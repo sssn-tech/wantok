@@ -1,0 +1,590 @@
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Jost", Arial, sans-serif;
+    line-height: 1.6;
+    color: #404040;
+    background-color: #fff;
+}
+
+/* 导航样式 */
+.jtpl-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg,#29482a,#4e8950,#9fb97f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.jtpl-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jtpl-logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+.jtpl-navigation {
+    display: flex;
+}
+
+.jtpl-navigation ul {
+    list-style: none;
+    display: flex;
+}
+
+.jtpl-navigation li {
+    position: relative;
+}
+
+.jtpl-navigation a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.jtpl-navigation a:hover {
+    color: #c60c30;
+}
+
+/* 移动菜单按钮 */
+.jtpl-mobile-navigation__label {
+    display: none;
+    cursor: pointer;
+}
+
+.jtpl-mobile-navigation__borders {
+    width: 25px;
+    height: 3px;
+    background-color: #404040;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.jtpl-mobile-navigation__borders:before,
+.jtpl-mobile-navigation__borders:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #404040;
+    transition: all 0.3s ease;
+}
+
+.jtpl-mobile-navigation__borders:before {
+    top: -8px;
+}
+
+.jtpl-mobile-navigation__borders:after {
+    top: 8px;
+}
+
+/* 固定轮播图容器 */
+.carousel-fixed {
+    position: fixed;
+    top: 0;           
+    left: 0;
+    width: 100%;
+    height: 100vh;   
+    z-index: 1;        
+    pointer-events: none;   
+    overflow: hidden;
+}
+
+/* 轮播内部容器 */
+.carousel-fixed .carousel-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    padding-top: 97px; 
+    box-sizing: border-box; 
+    overflow: hidden;   
+}
+
+/* 轮播项：淡入淡出过渡 */
+.carousel-fixed .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    z-index: 1;
+}
+.carousel-fixed .carousel-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 轮播图片 */
+.carousel-fixed img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 内容遮挡层 */
+.content-wrapper {
+    position: relative;
+    z-index: 3;              
+    margin-top: 100vh;       
+    background: #4e7658;    
+    overflow: auto;          
+}
+
+/* 主内容区 */
+.jtpl-section-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.jtpl-content {
+    margin-bottom: 50px;
+}
+
+/* 页面标题 */
+h1 {
+    font-size: 70px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: #2d2d2d;
+    text-align: center;
+}
+
+/* 目录展示区 */
+.catalog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+}
+
+.catalog-item {
+    width: calc(33.33% - 50px);
+    margin: 25px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media only screen and (max-width: 1024px) {
+   .catalog-item {
+        width: calc(50% - 30px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+   .catalog-item {
+        width: calc(50% - 30px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+   .catalog-item {
+        width: 100%;
+    }
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px);
+}
+
+.catalog-image {
+    height: 380px;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 480px) {
+   .catalog-image {
+        height: 320px;
+    }
+}
+
+.catalog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.catalog-item:hover .catalog-image img {
+    transform: scale(1.03);
+}
+
+.catalog-content {
+    padding: 25px;
+    background-color: #fff;
+}
+
+.catalog-title {
+    font-size: 22px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.catalog-description {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.catalog-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.catalog-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.button-primary {
+    background-color: #c60c30;
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #a00926;
+}
+
+.button-secondary {
+    border: 1px solid #c60c30;
+    color: #c60c30;
+    background-color: transparent;
+}
+
+.button-secondary:hover {
+    background-color: #f9f9f9;
+}
+
+/* 页脚样式 */
+.jtpl-footer {
+    background-color: #9fb97f;
+    color: #eee;
+    padding: 50px 0 20px;
+}
+
+.jtpl-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 1024px) {
+   .footer-column {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+   .footer-column {
+        width: 100%;
+    }
+}
+
+.footer-column h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #c60c30;
+}
+
+.footer-column p,
+.footer-column a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 20px;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
+
+/* 底部独立图文容器样式 */
+.contact-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: #9fb97f;
+    margin-bottom: 40px;
+    overflow: hidden;
+    padding: 20px 0; /* 修正内边距 */
+}
+
+@media (max-width: 1024px) {
+   .contact-card {
+        grid-template-columns: 1fr;
+    }
+    .contact-visual {
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+   .contact-details {
+        padding: 20px;
+    }
+}
+
+.contact-visual {
+    position: relative;
+    min-height: 320px;
+}
+
+.corporate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.contact-visual:hover .corporate-image {
+    transform: scale(1.02);
+}
+
+.contact-details {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-heading {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.contact-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: #fff;
+}
+
+.communication-channels {
+    margin-bottom: 1.5rem;
+}
+
+.contact-method {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.icon {
+    color: #fff;
+    width: 20px;
+    margin-right: 8px;
+}
+
+/* 认证弹窗样式 */
+.auth-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.auth-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 350px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.auth-modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 8px;
+    display: none;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.button-group button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    flex: 1;
+    transition: background-color 0.3s ease;
+}
+
+#auth-login {
+    background-color: #3498db;
+    color: white;
+}
+
+#auth-login:hover {
+    background-color: #2980b9;
+}
+
+#auth-cancel {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#auth-cancel:hover {
+    background-color: #c0392b;
+}
+
+/* 右上角关闭按钮 */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #c60c30;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+   .jtpl-header__inner {
+        padding: 10px 5%;
+    }
+   .jtpl-navigation {
+        display: none;
+    }
+   .jtpl-mobile-navigation__label {
+        display: block;
+    }
+}

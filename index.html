@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <title>公司介绍</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        html {
+            scroll-behavior: smooth; /* 锚点跳转平滑过渡 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 首页锚点 -->
+    <div id="top"></div>
+
+    <!-- 顶部导航 -->
+    <header class="jtpl-header">
+        <div class="jtpl-header__inner">
+            <div class="jtpl-logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="公司logo" width="150" height="150">
+                </a>
+            </div>
+            
+            <label class="jtpl-mobile-navigation__label">
+                <span class="jtpl-mobile-navigation__borders"></span>
+            </label>
+            
+            <nav class="jtpl-navigation">
+                <ul>
+                    <li><a href="#top">首页</a></li>         <!-- 首页锚点 -->
+                    <li><a href="#product-catalog">产品目录</a></li> <!-- 产品目录锚点 -->
+                    <li><a href="#contact-us">联系方式</a></li>   <!-- 联系方式锚点 -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 固定轮播图层 -->
+    <div class="carousel-fixed">
+        <div class="carousel-inner">
+            <div class="carousel-item active"><img src="images/index1.jpg" alt="Banner 1"></div>
+            <div class="carousel-item"><img src="images/index2.jpg" alt="Banner 2"></div>
+            <div class="carousel-item"><img src="images/index3.jpg" alt="Banner 3"></div>
+            <div class="carousel-item"><img src="images/index4.jpg" alt="Banner 4"></div>
+            <div class="carousel-item"><img src="images/index5.jpg" alt="Banner 5"></div>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="content-wrapper">
+        <div class="jtpl-main">
+            <div class="responsive-content" id="about-us">
+                <div class="media-block"></div>
+            </div>
+
+            <div class="responsive-content">
+                <div class="media-block">
+                    <div class="media-text">
+                        <h1>构筑品质空间，智创美好未来</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 活动介绍1 -->
+            <div class="responsive-content">
+                <div class="media-block">
+                    <div class="media-image">
+                        <img src="images/picture4.jpg" alt="内容描述">
+                    </div>
+                    <div class="media-text">
+                        <h2>我们相信</h2>
+                        <p>"真正的设计不仅是视觉享受，更是对生活方式的深刻理解。过去[X]年，我们已为[数字]+客户实现理想空间解决方案。"</p>
+                        <button class="media-button">了解更多</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 活动介绍2 -->
+            <div class="responsive-content">
+                <div class="media-block reverse">
+                    <div class="media-image">
+                        <img src="images/picture5.jpg" alt="内容描述">
+                    </div>
+                    <div class="media-text">
+                        <h2>服务亮点</h2>
+                        <p>定制化设计 - "从概念到落地全程1v1专属服务"</p>
+                        <p>品质保障 - "严选全球[XX]家优质供应商"</p>
+                        <p>智能配套 - "融合物联网技术的未来生活场景"</p>
+                        <button class="media-button">了解更多</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 产品目录锚点 -->
+            <div class="jtpl-section-main" id="product-catalog">
+                <h1>产品目录</h1>
+                <div class="catalog-grid">
+                    <div class="catalog-item">
+                        <div class="catalog-image">
+                            <img src="images/picture1.jpg" alt="预设目录1">
+                        </div>
+                        <div class="catalog-content">
+                            <div class="catalog-actions">
+                                <a data-pdf="pdf/test1.pdf" class="catalog-button button-primary">PDF下载</a>
+                                <a data-pdf="pdf/test1.pdf" class="catalog-button button-secondary">在线浏览</a>
+                            </div>
+                            <h3 class="catalog-title">预设目录1 2025</h3>
+                            <p class="catalog-description">预设描述1测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段</p>
+                        </div>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-image">
+                            <img src="images/picture2.jpg" alt="预设目录2">
+                        </div>
+                        <div class="catalog-content">
+                            <div class="catalog-actions">
+                                <a data-pdf="pdf/test2.pdf" class="catalog-button button-primary">PDF下载</a>
+                                <a data-pdf="pdf/test2.pdf" class="catalog-button button-secondary">在线浏览</a>
+                            </div>
+                            <h3 class="catalog-title">预设目录2</h3>
+                            <p class="catalog-description">预设描述1测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段</p>
+                        </div>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-image">
+                            <img src="images/picture3.jpg" alt="预设目录3">
+                        </div>
+                        <div class="catalog-content">
+                            <div class="catalog-actions">
+                                <a  class="catalog-button button-primary" data-pdf="pdf/test3.pdf">PDF下载</a>
+                                <a  class="catalog-button button-secondary" data-pdf="pdf/test3.pdf">在线浏览</a>
+                            </div>
+                            <h3 class="catalog-title">预设目录3</h3>
+                            <p class="catalog-description">预设描述1测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 登录模态框 -->
+            <div id="auth-modal" class="auth-modal">
+                <div class="modal-content">
+                    <button class="close-button">&times;</button>
+                    <h3>请输入访问密码</h3>
+                    <div class="form-group">
+                        <label for="auth-password">密码:</label>
+                        <input type="password" id="auth-password" class="form-control">
+                    </div>
+                    <div class="error-message"></div>
+                    <div class="button-group">
+                        <button id="auth-login">确定</button>
+                        <button id="auth-cancel">取消</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 额外介绍 -->
+            <div class="responsive-content">
+                <div class="media-block">                              
+                    <div class="media-text">
+                        <h1>我们提供想法、概念 - 解决方案</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 联系方式锚点 -->
+            <footer class="jtpl-footer">
+                <div class="jtpl-footer__inner">
+                    <div class="contact-card" id="contact-us">
+                        <div class="contact-visual">
+                            <img src="images/company-building.jpg" alt="企业建筑外观" class="corporate-image">
+                        </div>
+                        <div class="contact-details">
+                            <h2 class="contact-heading">关于我们</h2>
+                            <p class="description">预设描述 测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段测试字段</p>
+                            <div class="communication-channels">
+                                <p class="contact-method"><i class="fas fa-map-marker-alt icon"></i> 预设地址</p>
+                                <p class="contact-method"><i class="fas fa-phone icon"></i> +86 182 5888 8888</p>
+                                <p class="contact-method"><i class="fas fa-envelope icon"></i> 预设邮箱</p>
+                            </div>
+                            <p class="copyright">© 2025 小风设计 | 保留所有权利</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-grid">
+                        <!-- <div class="footer-column contact-us">
+                            <h2>联系我们</h2>
+                            <p>地址：预设地址</p>
+                            <p>电话：+86 182 5888 8888</p>
+                            <p>邮箱：预设邮箱</p>
+                        </div> -->
+                        <div class="footer-column quick-links">
+                            <h2>快速链接</h2>
+                            <a href="#top">首页</a>         <!-- 页脚同步锚点 -->
+                            <a href="#product-catalog">产品目录</a> <!-- 页脚同步锚点 -->
+                            <a href="#contact-us">联系方式</a>   <!-- 页脚同步锚点 -->
+                        </div>
+                        <div class="footer-column follow-us">
+                            <h2>关注我们</h2>
+                            <a href="#">Facebook</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Pinterest</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <p>© 2025 小风设计 | 隐私政策 | 使用条款</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
