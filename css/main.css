@@ -1,6 +1,6 @@
 /* ===== 响应式图文容器 ===== */
 .responsive-content {
-    max-width: 1300px;
+    max-width: 1200px; /* 与导航、目录区最大宽度一致 */
     width: 100%;
     margin: 0 auto;
 }
@@ -13,13 +13,14 @@
     overflow: hidden;
     margin-bottom: 50px;
 }
-/*  图文位置切换  */
+
+/* 图文位置切换 */
 .media-block.reverse {
   flex-direction: row-reverse; /* 桌面端图片在右 */
 }
 
 .media-image {
-    flex: 1 1 45%;
+    flex: 1 1 calc(33.33% - 30px); /* 参考目录区三列比例，调整间距 */
     min-height: 300px;
     overflow: hidden;
 }
@@ -36,22 +37,23 @@
 }
 
 .media-text {
-    flex: 1 1 55%;
+    flex: 1 1 calc(66.66% - 30px); /* 文字区占剩余2/3宽度 */
     padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 15px; /* 与目录区 .catalog-item 的内边距对齐 */
 }
 
 .media-text h1 {
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 20px;
     color: #2d2d2d;
     text-align: center;
 }
 
 .media-text h2 {
-    font-size: 60px;
+    font-size: 40px;
     margin-bottom: 20px;
     color: #2d2d2d;
     text-align: center;
@@ -73,7 +75,6 @@
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    /* 修改关键属性 */
     align-self: center; /* 水平居中 */
     margin-top: auto;   /* 顶部自动补满剩余空间 */
     margin-bottom: 0;   /* 移除底部外边距（可选） */
@@ -83,32 +84,45 @@
     background-color: #a00926;
 }
 
-/* 移动端适配 */
+/* 移动端适配：完全复制目录区响应式逻辑 */
+@media (max-width: 1024px) {
+   .media-block {
+        flex-direction: column; /* 从并排改为堆叠 */
+    }
+   .media-block.reverse {
+        flex-direction: column; /* 反转布局也堆叠 */
+    }
+   .media-image,
+   .media-text {
+        flex: 1 1 calc(50% - 30px); /* 参考目录区两列宽度 */
+        margin: 15px;
+    }
+}
+
 @media (max-width: 768px) {
-    .media-block {
-        flex-direction: column-reverse;
-    }
-    
-    .media-image {
-        min-height: 250px;
-    }
-    
-    .media-text {
-        padding: 25px 20px;
+   .media-image,
+   .media-text {
+        flex: 1 1 calc(50% - 30px); /* 参考目录区两列宽度 */
     }
 }
 
 @media (max-width: 480px) {
-    .media-text h2 {
-        font-size: 24px;
+   .media-image,
+   .media-text {
+        flex: 1 1 100%; /* 参考目录区单列宽度 */
+        margin: 15px;
     }
-    
-    .media-image {
-        min-height: 200px;
+   .media-text h2 {
+        font-size: 24px; /* 参考目录区小屏幕字体缩放 */
+    }
+   .media-image {
+        min-height: 200px; /* 参考目录区 .catalog-image 小屏幕高度 */
     }
 }
+
+/* 反转布局的移动端兼容 */
 @media (max-width: 768px) {
   .media-block.reverse {
-    flex-direction: column-reverse; /* 移动端保持图片在下 */
+    flex-direction: column-reverse; /* 移动端反转后，图片在文字下方 */
   }
 }
