@@ -178,13 +178,13 @@ h1 {
 .catalog-grid {
     display: flex;
     flex-wrap: wrap;
-    margin: -15px;
     width: 100%;
+    padding: 15px;
 }
 
 .catalog-item {
     width: calc(25% - 30px);
-    margin: 15px;
+    margin: 15px; 
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -197,16 +197,20 @@ h1 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+@media only screen and (max-width: 576px) {
+   .catalog-item {
+        width: 100%; 
+        margin: 15px;
+    }
+   .catalog-image {
+        height: 280px; 
+    }
+}
+
 .catalog-image {
     height: 300px;
     overflow: hidden;
     position: relative;
-}
-
-@media only screen and (max-width: 576px) {
-   .catalog-image {
-        height: 280px; 
-    }
 }
 
 .catalog-image img {
