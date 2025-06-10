@@ -18,7 +18,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(180deg,#29482a,#4e8950,#9fb97f); 
+    background: rgba(154, 205, 72);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 100;
 }
@@ -27,7 +27,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -53,7 +53,7 @@ body {
     padding: 10px 20px;
     text-decoration: none;
     color: #fff;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     display: block;
     transition: all 0.3s ease;
@@ -147,13 +147,13 @@ body {
     position: relative;
     z-index: 3;              
     margin-top: 100vh;       
-    background: #4e7658;    
+    background: rgba(80, 126, 64);    
     overflow: auto;          
 }
 
 /* 主内容区 */
 .jtpl-section-main {
-    max-width: 1200px;
+    max-width: 1430px;
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -167,129 +167,149 @@ h1 {
     font-size: 70px;
     margin-bottom: 30px;
     font-weight: 500;
-    color: #2d2d2d;
+    color: #fff;
     text-align: center;
 }
 
-/* 目录展示区 */
+/* 目录展示区 - 父容器布局 */
 .catalog-grid {
     display: flex;
     flex-wrap: wrap;
-    margin: -15px;
+    margin: -15px; /* 负margin抵消子元素margin，消除外层间隙 */
+    width: 100%; /* 可选：让容器占满父级宽度，需配合页面结构 */
 }
 
+/* 子项基础样式（默认四列） */
 .catalog-item {
-    width: calc(33.33% - 50px);
-    margin: 25px;
+    width: calc(25% - 30px); /* 25% = 四等分，左右margin各15px → 总减30px */
+    margin: 15px; /* 统一子项内外边距，保证间距均匀 */
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* 可选：给卡片加底色，与截图风格统一 */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* 可选：轻微投影增强层次 */
 }
 
-@media only screen and (max-width: 1024px) {
-   .catalog-item {
-        width: calc(50% - 30px);
-    }
-}
-
-@media only screen and (max-width: 768px) {
-   .catalog-item {
-        width: calc(50% - 30px);
-    }
-}
-
-@media only screen and (max-width: 480px) {
-   .catalog-item {
-        width: 100%;
-    }
-}
-
+/* 鼠标悬浮交互（保留原效果） */
 .catalog-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 悬浮时增强投影 */
 }
 
-.catalog-image {
-    height: 380px;
-    overflow: hidden;
-}
 
-@media only screen and (max-width: 480px) {
-   .catalog-image {
-        height: 320px;
+/* 响应式：不同屏幕宽度下的列数切换 */
+/* 1200px 以下 → 三列布局 */
+@media only screen and (max-width: 1200px) {
+   .catalog-item {
+        width: calc(33.33% - 30px); 
     }
 }
 
+/* 992px 以下 → 两列布局 */
+@media only screen and (max-width: 992px) {
+   .catalog-item {
+        width: calc(50% - 30px); 
+    }
+}
+
+/* 576px 以下 → 单列布局 */
+@media only screen and (max-width: 576px) {
+   .catalog-item {
+        width: 100%; 
+        margin: 15px 0; /* 手机端取消左右margin，避免过窄 */
+    }
+}
+
+
+/* 图片容器 - 适配多列高度 */
+.catalog-image {
+    height: 300px; /* 四列时适度降低高度，平衡视觉 */
+    overflow: hidden;
+    position: relative; /* 可选：给图片上的“Since”等标识做定位 */
+}
+
+/* 手机端进一步缩小图片高度 */
+@media only screen and (max-width: 576px) {
+   .catalog-image {
+        height: 280px; 
+    }
+}
+
+/* 图片自适应规则（保持拉伸/裁剪但不变形） */
 .catalog-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* 保持图片比例，裁剪多余部分 */
     transition: transform 0.5s ease;
 }
 
+/* 图片悬浮缩放（保留原效果） */
 .catalog-item:hover .catalog-image img {
     transform: scale(1.03);
 }
 
+
+/* 内容区 - 文字与按钮布局 */
 .catalog-content {
-    padding: 25px;
-    background-color: #fff;
+    padding: 20px; /* 减少内边距，避免四列下内容过宽 */
+    text-align: center; /* 与截图风格统一（文字居中） */
 }
 
 .catalog-title {
-    font-size: 22px;
-    padding-top: 10px;
-    margin-bottom: 10px;
+    font-size: 20px; /* 四列下缩小字号，防止换行 */
     font-weight: 500;
-    text-align: center;
+    margin: 10px 0;
+    color: #333; /* 可选：加深标题颜色增强可读性 */
 }
 
 .catalog-description {
-    font-size: 20px;
+    font-size: 16px; /* 描述文字同步缩小，保持可读性 */
     line-height: 1.5;
     color: #666;
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 15px; /* 微调间距，适配缩小的容器 */
 }
 
+/* 按钮容器 - 弹性布局居中 */
 .catalog-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
+    justify-content: center; /* 按钮居中对齐 */
 }
 
+/* 按钮基础样式 */
 .catalog-button {
     padding: 10px 20px;
     font-size: 14px;
     border-radius: 4px;
     text-decoration: none;
     text-align: center;
-    display: inline-block;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
+/* 主按钮（红底白字） */
 .button-primary {
     background-color: #c60c30;
     color: white;
+    border: none;
 }
-
 .button-primary:hover {
-    background-color: #a00926;
+    background-color: #a00926; /* 悬浮加深红色 */
 }
 
+/* 次按钮（红边框红字） */
 .button-secondary {
     border: 1px solid #c60c30;
     color: #c60c30;
     background-color: transparent;
 }
-
 .button-secondary:hover {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* 悬浮浅灰底色 */
 }
 
 /* 页脚样式 */
 .jtpl-footer {
-    background-color: #9fb97f;
+    background-color: rgba(154, 205, 72);
     color: #eee;
     padding: 50px 0 20px;
 }

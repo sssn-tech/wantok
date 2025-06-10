@@ -1,6 +1,6 @@
 /* ===== 响应式图文容器 ===== */
 .responsive-content {
-    max-width: 1200px; /* 与导航、目录区最大宽度一致 */
+    max-width: 1400px; /* 与导航、目录区最大宽度一致 */
     width: 100%;
     margin: 0 auto;
 }
