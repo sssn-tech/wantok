@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             position: 'relative',
             zIndex: '3',
             marginTop: '100vh',
-            background: '#4e7658',
+            background: 'rgba(154, 205, 72)',
             overflow: 'auto' // 内容过长时允许滚动
         });
     }
