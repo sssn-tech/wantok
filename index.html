@@ -92,6 +92,31 @@
       margin-top: 1em;
     }
 
+    /* button variant (new) */
+    .btn-green {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      background: #00703c; /* same as ↑ */
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 1em;
+      border: 2px solid rgba(0,0,0,0.08);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+    }
+
+    .btn-green:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      background: #c62828;
+    }
+
+    .btn-green:focus {
+      outline: 3px solid rgba(210,47,47,0.18);
+      outline-offset: 2px;
+    }
+
 
     .callout-1 {
       display: flex;
@@ -352,7 +377,7 @@
   <!-- Hero Section -->
   <section class="hero gutter">
       <div class="hero-slides">
-      <img src="images/hero/01.jpg" alt="Hero Image 1" class="hero-slide active">
+      <img src="images/hero/01.jpg" alt="Hero Image 1" class="hero-slide">
       <img src="images/hero/02.jpg" alt="Hero Image 2" class="hero-slide">
       <img src="images/hero/03.jpg" alt="Hero Image 3" class="hero-slide">
       <img src="images/hero/04.jpg" alt="Hero Image 4" class="hero-slide">
@@ -363,7 +388,6 @@
       <div class="w-50">
         <h1 style="color:white;">Inspiring Growth,<br />Empowering Communities</h1>
         <p class="mb20" style="color:white;">We believe in growing more than just gardens — we grow futures.</p>
-        
       </div>
     </div>
   </section>
@@ -372,37 +396,45 @@
   <section class="gutter bot white">
     <div style="height: 40px;"></div>
     <div class="wrapper">
-      <a href="#" class="callout-1 rev-col-m">
+      <div class="callout-1 rev-col-m">
         <div class="w-50">
           <div class="gutter well grey">
             <span>Innovation</span>
             <h2>New Sustainable Product Line Launch</h2>
             <p>Discover how we're leading the charge in eco-friendly gardening solutions.</p>
+                  <!-- jump button -->
+            <p>
+              <a href="pdfpage.html" class="btn-green" role="button" aria-label="Go to PDF">Learn More</a>
+            </p>
           </div>
         </div>
         <div class="w-50">
           <div class="fill-bg" style="background-image: url('images/section1/1.png');"></div>
         </div>
-      </a>
+      </div>
     </div>
 
     <div class="wrapper">
-      <a href="#" class="callout-1 rev-col-m">
+      <div class="callout-1 rev-col-m">
         <div class="w-50">
           <div class="gutter well grey">
             <span>Learning Activities</span>
             <h2>Hands-on Outdoor Learning for Kids</h2>
             <p>72 free lessons to engage young minds through gardening and nature.</p>
+                              <!-- jump button -->
+            <p>
+              <a href="pdfpage.html" class="btn-green" role="button" aria-label="Go to PDF">Learn More</a>
+            </p>
           </div>
         </div>
         <div class="w-50">
           <div class="fill-bg" style="background-image: url('images/section1/2.png');"></div>
         </div>
-      </a>
+      </div>
     </div>
 
     <div class="wrapper">
-      <a href="#" class="callout-1">
+      <div class="callout-1">
         <div class="w-50">
           <div class="fill-bg" style="background-image: url('images/section1/3.png');"></div>
         </div>
@@ -411,13 +443,17 @@
             <span>Learning Activities</span>
             <h2>Hands-on Outdoor Learning for Kids</h2>
             <p>72 free lessons to engage young minds through gardening and nature.</p>
+                              <!-- jump button -->
+            <p>
+              <a href="pdfpage.html" class="btn-green" role="button" aria-label="Go to PDF">Learn More</a>
+            </p>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <div class="wrapper">
-      <a href="#" class="callout-1">
+      <div class="callout-1">
         <div class="w-50">
           <div class="fill-bg" style="background-image: url('images/section1/4.png');"></div>
         </div>
@@ -426,44 +462,15 @@
             <span>Learning Activities</span>
             <h2>Hands-on Outdoor Learning for Kids</h2>
             <p>72 free lessons to engage young minds through gardening and nature.</p>
+                              <!-- jump button -->
+            <p>
+              <a href="pdfpage.html" class="btn-green" role="button" aria-label="Go to PDF">Learn More</a>
+            </p>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
-    <section class="manual-section">
-    <h2>PRODUCTS BROCHURE</h2>
-    <div class="manual-grid">
-      <div class="manual-card">
-        <img src="images/manual-covers/1.png" alt="Manual 1">
-        <div class="manual-card-content">
-          <h3>BROCHURE 1</h3>
-          <p>BROCHURE BROCHURE BROCHURE BROCHURE BROCHURE BROCHURE BROCHURE</p>
-        </div>
-      </div>
-      <div class="manual-card">
-        <img src="images/manual-covers/1.png" alt="Manual 2">
-        <div class="manual-card-content">
-          <h3>BROCHURE 2</h3>
-          <p>BROCHURE BROCHURE BROCHURE BROCHURE BROCHURE BROCHURE BROCHURE</p>
-        </div>
-      </div>
-      <div class="manual-card">
-        <img src="images/manual-covers/1.png" alt="Manual 3">
-        <div class="manual-card-content">
-          <h3>BROCHURE 3</h3>
-          <p>BROCHURE 3BROCHURE 3BROCHURE 3BROCHURE 3BROCHURE 3BROCHURE 3</p>
-        </div>
-      </div>
-      <div class="manual-card">
-        <img src="images/manual-covers/1.png" alt="Manual 4">
-        <div class="manual-card-content">
-          <h3>BROCHURE 4</h3>
-          <p>BROCHURE 4BROCHURE 4BROCHURE 4BROCHURE 4BROCHURE</p>
-          
-        </div>
-      </div>
-    </div>
   </section>
 
     <!-- Brands Section -->
