@@ -17,7 +17,7 @@
   <link rel="shortcut icon" href="https://via.placeholder.com/32x32.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
-  <link rel="stylesheet" href="https://scottsmiraclegro.com/wp-content/themes/smg-2019/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
   <style>
@@ -108,7 +108,7 @@
       left: 0;
       width: 100%;
       height: 70vh;
-      background-image: url('images/about/factory_image-2.jpg');
+      background-image: url('images/about/factory_image.jpg');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -120,11 +120,14 @@
       position: relative;
       margin-top: 50vh;
       background: #ffffff;
-      padding: 2rem;
+      /* 修改：底部padding改为0，防止多余留白导致视觉断层，padding改由内部元素控制 */
+      padding: 2rem 2rem 0 2rem; 
       border-radius: 2rem 2rem 0 0;
       box-shadow: 0 -4px 18px rgba(0,0,0,0.08);
       transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s ease;
       z-index: 2;
+      /* 确保没有下边距 */
+      margin-bottom: 0; 
     }
 
     .content-wrapper.overlay-active {
@@ -143,7 +146,7 @@
       .content-wrapper {
         margin-top: 0;
         border-radius: 0.75rem 0.75rem 0 0;
-        padding: 1rem;
+        padding: 1rem 1rem 0 1rem;
       }
     }
 
@@ -221,6 +224,10 @@
       color: white;
       padding: 40px 0 20px;
       font-size: 14px;
+      
+      position: relative; 
+      z-index: 2;        
+      margin-top: -10px;   /* 向上拉动10px，消除浏览器渲染产生的微小缝隙 */
     }
 
     .footer-container {
@@ -296,9 +303,9 @@
     }
 
     .footer-bottom {
-      max-width: 1200px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 5px;
       border-top: 1px solid #555;
       font-size: 12px;
       color: #aaa;
@@ -332,86 +339,6 @@
     @media (max-width: 480px) {
       .footer-column {
         flex: 0 0 100%;
-      }
-    }
-
-    .manual-section {
-      background: #f9f9f9;
-      padding: 30px 10px;
-      text-align: center;
-    }
-
-    .manual-section h2 {
-      font-size: 24px;
-      margin-bottom: 40px;
-    }
-
-    .manual-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-    .manual-card {
-      background: white;
-      width: 22%;
-      min-height: 550px;
-      min-width: 250px;
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease;
-    }
-
-    .manual-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .manual-card img {
-        width: 100%;
-        height: 70%;
-        background-color: #e0e0e0; /* 淡灰色背景作为占位 */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        color: #777;
-        position: relative;
-    }
-
-    .manual-card-content {
-        padding: 15px;
-        height: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
-    .manual-card-content h3 {
-      font-size: 20px;
-      margin: 0 0 10px;
-      color: #00703c;
-    }
-
-    .manual-card-content p {
-      font-size: 15px;
-      color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .manual-card {
-        width: 45%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .manual-card {
-        width: 100%;
       }
     }
 
@@ -664,7 +591,7 @@
       gap: 22px;
       max-width: 1500px;
       margin: 0 auto;
-      padding: 30px 20px;
+      padding: 30px 20px; /* 底部padding保留，确保内容不贴边 */
       align-items: flex-start;
     }
 
@@ -732,12 +659,11 @@
 
   <div class="header-image" role="img" aria-label="Factory header image"></div>
 
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="margin-top: 45vh;">
 
   <!-- Main Content Sections -->
   <section class="content-sections">
     <h1>WANTOK GARDENING — Tools That Make Work Easier</h1>
-    
     <div class="intro-with-factory">
       <div class="factory-image">
         <div class="visual-card">
@@ -819,10 +745,8 @@
         </div>
       </div>
     </div>
-
-
+  </section>
   </div>
-
 <footer id="footer">
     <div class="footer-container">
         <div class="footer-column">
@@ -860,7 +784,7 @@
                 <div>
                     <strong>Telephone:</strong> 
                     <a href="tel:+8613709183056">+86 137-0918-3056</a> / 
-                    <a href="tel:02985360651">029-85360651</a>
+                    <a href="tel:+8602985360651">+86 029-85360651</a>
                 </div>
             </div>
 
